@@ -1,0 +1,5 @@
+'use client';
+import { Canvas } from '@react-three/fiber';
+import { Float, OrbitControls, Stars } from '@react-three/drei';
+function Earth(){return <Float speed={1.1} rotationIntensity={.2}><mesh rotation={[0.35,-0.9,0]}><sphereGeometry args={[2.1,96,96]}/><meshStandardMaterial color="#1f6fff" emissive="#092b66" roughness={.65}/></mesh><mesh scale={2.18}><sphereGeometry args={[1,96,96]}/><meshBasicMaterial color="#4ce0ff" transparent opacity={.12}/></mesh><mesh rotation={[1.2,.2,.7]}><torusGeometry args={[2.85,.01,12,160]}/><meshBasicMaterial color="#61f2a6"/></mesh><mesh rotation={[.4,1.4,.3]}><torusGeometry args={[3.2,.008,12,160]}/><meshBasicMaterial color="#ffcb5b"/></mesh></Float>}
+export function EarthHero(){return <div className="h-[440px] rounded-[2rem] glass overflow-hidden"><Canvas camera={{position:[0,0,6],fov:45}}><ambientLight intensity={1.4}/><pointLight position={[4,3,4]} intensity={4}/><Stars radius={80} depth={40} count={2200} factor={4}/><Earth/><OrbitControls enableZoom={false} autoRotate autoRotateSpeed={.45}/></Canvas></div>}
