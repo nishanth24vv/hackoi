@@ -1,0 +1,4 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+:root{color-scheme:dark} body{margin:0;background:#030814;color:#eef7ff} .glass{border:1px solid rgba(255,255,255,.12);background:linear-gradient(145deg,rgba(10,25,47,.82),rgba(4,12,24,.62));box-shadow:0 24px 80px rgba(0,0,0,.35);backdrop-filter:blur(20px)} .scan{background-image:linear-gradient(rgba(76,224,255,.08) 1px,transparent 1px),linear-gradient(90deg,rgba(76,224,255,.08) 1px,transparent 1px);background-size:32px 32px} button:focus-visible,a:focus-visible{outline:3px solid #61f2a6;outline-offset:3px}

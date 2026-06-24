@@ -1,30 +1,57 @@
-# AI-Powered Digital Twin of India's Climate
+# ClimateVerse — National Climate Digital Twin of India
 
-A proof-of-concept, browser-native dashboard for exploring an AI-powered digital twin of India's climate using national datasets from IMD, ISRO/MOSDAC, Bhuvan, and satellite-derived INSAT products.
+**Predict. Simulate. Adapt.**
 
-The dashboard demonstrates:
+ClimateVerse is a production-grade architecture and interface for an AI-powered national climate command center for India. It is designed for ISRO, IMD, NDMA, state disaster authorities, agriculture departments, water resource teams, urban planning agencies, and senior policymakers.
 
-- High-resolution rainfall and temperature monitoring over a selected Indian pilot region.
-- AI-style short-term prediction cards for monsoon, heat-stress, drought, and flood-risk signals.
-- Interactive geospatial visualization with district-level climate cells.
-- What-if scenario controls for rainfall and temperature anomalies.
-- A scalable data pipeline blueprint for integrating IMD gridded rainfall/temperature, INSAT LST/SST/rainfall, and reanalysis datasets.
+## Capabilities
+
+- Cinematic Three.js India-focused Earth hero with satellite-orbit visual language.
+- Global Command Center with national KPIs, trends, confidence intervals, and forecast direction.
+- Digital Twin Map concept with district/state boundaries, river basins, watersheds, terrain/satellite mode, layer controls, and a national risk fabric.
+- District Digital Twin intelligence panel covering population, basin, risk indices, vulnerability, and AI recommendations.
+- AI Forecasting Center for LSTM, Transformer, Graph Neural Network, and Physics-Informed Neural Network model outputs.
+- ClimateGPT right-side assistant for forecast explanation, uncertainty explanation, reports, and intervention recommendations.
+- Simulation Lab for temperature, rainfall, population, urbanization, deforestation, groundwater, carbon, and reservoir scenarios.
+- Satellite, disaster, agriculture, water, finance, executive war room, report generation, and multilingual module shells.
+- FastAPI backend starter, Docker Compose, Kubernetes manifest, and synthetic India-like operational demo data.
+
+## Stack
+
+- Frontend: Next.js, React, TypeScript, Tailwind CSS, Framer Motion, Three.js, Recharts, Zustand, Deck.gl/Mapbox-ready dependencies.
+- Backend: FastAPI, Python.
+- Data layer target: PostgreSQL/PostGIS and Redis.
+- AI target: PyTorch, TensorFlow, XGBoost, GNN, LSTM, Transformer, and PINN model services.
+- Deployment: Docker and Kubernetes.
 
 ## Run locally
 
-This project is intentionally dependency-free. Open `index.html` directly in a browser, or serve the directory with any static file server:
-
 ```bash
-python3 -m http.server 8000
+npm install
+npm run dev
 ```
 
-Then visit <http://localhost:8000>.
+Open <http://localhost:3000>.
 
-## Dataset references
+API only:
 
-- IMD gridded rainfall (0.25° × 0.25°)
-- IMD maximum temperature (1.0° × 1.0°)
-- IMD minimum temperature (1.0° × 1.0°)
-- MOSDAC INSAT products: `3RIMG_L2B_LST`, `3RIMG_L2B_SST`, `3RIMG_L2B_IMC`
+```bash
+cd backend
+pip install -r requirements.txt
+uvicorn app.main:app --reload
+```
 
-The current PoC uses representative synthetic climate cells so the UI and simulation workflow can be demonstrated without requiring protected data downloads or API credentials.
+Full stack with data services:
+
+```bash
+docker compose up --build
+```
+
+## National datasets designed for integration
+
+- IMD gridded rainfall 0.25° × 0.25°.
+- IMD maximum and minimum temperature 1.0° × 1.0°.
+- MOSDAC INSAT products: `3RIMG_L2B_LST`, `3RIMG_L2B_SST`, `3RIMG_L2B_IMC`.
+- Bhuvan, NICES, river basin/watershed layers, Sentinel, Landsat, ERA5, GPM, MODIS, AQI, reservoir, groundwater, and carbon datasets.
+
+The current repository includes realistic synthetic district-level data so the platform can be evaluated without protected credentials or large climate-data downloads.
